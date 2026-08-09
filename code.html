@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr" style="background-color:#f3f1e9 !important; color-scheme: light !important;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#f3f1e9">
+<title>Le Vieil Annecy — Restaurant, Annecy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1e2a2c;
+    --teal:#1f6b6b;
+    --teal-deep:#154f4f;
+    --stone:#8a7a5c;
+    --cream:#f3f1e9;
+    --cream-deep:#e9e3d0;
+    --white:#ffffff;
+    --line:rgba(30,42,44,0.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;forced-color-adjust:none;}
+  html{scroll-behavior:smooth;color-scheme:light;}
+  body{
+    background-color:var(--cream) !important;
+    color:var(--ink) !important;
+    font-family:'Inter',sans-serif;line-height:1.55;
+    -webkit-font-smoothing:antialiased;color-scheme:light;
+  }
+  a{color:inherit;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-weight:800;
+    font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--teal);white-space:nowrap;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--white);color:var(--ink);
+    border-bottom:3px solid var(--teal);
+  }
+  .nav-inner{
+    max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+    padding:0.85rem 1.5rem;gap:1rem;
+  }
+  .brand{font-family:'Fraunces',serif;font-size:1.45rem;white-space:nowrap;}
+  .brand span{color:var(--teal);font-style:italic;}
+  nav.links{display:flex;gap:1.2rem;overflow-x:auto;scrollbar-width:none;}
+  nav.links::-webkit-scrollbar{display:none;}
+  nav.links a{
+    font-family:'Inter',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.05em;text-transform:uppercase;
+    text-decoration:none;color:#5c5648;white-space:nowrap;transition:color .2s;
+  }
+  nav.links a:hover{color:var(--teal);}
+  .call-btn{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;
+    background:var(--teal);color:var(--white);padding:0.55rem 0.9rem;text-decoration:none;
+    white-space:nowrap;flex-shrink:0;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;color:var(--ink);
+    background:
+      radial-gradient(ellipse 600px 320px at 20% 10%, rgba(31,107,107,0.09), transparent 60%),
+      radial-gradient(ellipse 500px 300px at 85% 30%, rgba(138,122,92,0.1), transparent 60%),
+      var(--cream-deep);
+    padding:5rem 1.5rem 4.5rem;overflow:hidden;text-align:center;
+  }
+  .hero-inner{max-width:1180px;margin:0 auto;}
+  .hero .eyebrow{margin-bottom:1.2rem;}
+  .hero h1{font-size:clamp(2.6rem,7.5vw,4.6rem);line-height:1.05;color:var(--ink);}
+  .hero h1 i{color:var(--teal);font-style:italic;}
+  .hero p.sub{
+    font-family:'Inter',sans-serif;font-size:1.02rem;max-width:34rem;
+    margin:1.3rem auto 0;color:#4a4438;
+  }
+  .hero .meta{
+    display:flex;flex-wrap:wrap;gap:0.5rem 1.1rem;justify-content:center;margin-top:2rem;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:0.78rem;color:#5c5648;
+  }
+  .hero .meta span.dot::before{content:"·";margin:0 0.55rem;color:var(--teal);}
+
+  /* ---------- info strip ---------- */
+  .info-strip{
+    max-width:1180px;margin:0 auto;position:relative;z-index:5;
+    background:var(--white);display:grid;grid-template-columns:repeat(4,1fr);
+    box-shadow:0 16px 36px rgba(30,42,44,0.1);
+  }
+  .info-strip .cell{padding:1.5rem 1.4rem;border-right:1px solid var(--line);}
+  .info-strip .cell:last-child{border-right:none;}
+  .info-strip .cell .eyebrow{display:block;margin-bottom:0.5rem;}
+  .info-strip .cell .val{font-weight:700;font-size:0.92rem;}
+  .info-strip .cell .val small{display:block;font-weight:400;color:#5c5648;font-size:0.78rem;margin-top:0.15rem;}
+
+  /* ---------- section shell ---------- */
+  section{max-width:1180px;margin:0 auto;padding:5rem 1.5rem;}
+  .section-head{
+    display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;
+    margin-bottom:2.4rem;padding-bottom:1.1rem;border-bottom:2px solid var(--ink);
+  }
+  .section-head h2{font-size:clamp(2.1rem,4vw,3rem);}
+  .section-head .eyebrow{transform:translateY(-6px);}
+
+  .subhead{
+    font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:1.4rem;
+    color:var(--teal-deep);margin:2.4rem 0 1rem;
+  }
+  .subhead:first-child{margin-top:0;}
+
+  /* ---------- dish rows ---------- */
+  .dish-row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:0.85rem 0;border-bottom:1px dotted var(--line);
+  }
+  .dish-row:last-child{border-bottom:none;}
+  .dish-row .name{font-weight:700;font-size:0.97rem;}
+  .dish-row .desc{display:block;font-weight:400;font-size:0.82rem;color:#5c5648;margin-top:0.2rem;}
+  .dish-row .price{font-family:'Inter',sans-serif;font-weight:800;font-size:0.9rem;color:var(--teal);white-space:nowrap;}
+
+  /* ---------- card grid ---------- */
+  .card-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.5px;background:var(--line);border:1px solid var(--line);
+  }
+  .card{background:var(--white);padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:0.4rem;}
+  .card .top{display:flex;justify-content:space-between;align-items:baseline;gap:0.8rem;}
+  .card h3{font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;}
+  .card .price{font-family:'Inter',sans-serif;font-weight:800;font-size:0.9rem;color:var(--teal);white-space:nowrap;}
+  .card p{font-size:0.83rem;color:#5c5648;}
+
+  /* ---------- menu formule cards ---------- */
+  .formule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+  .formule{
+    background:var(--white);border:1px solid var(--line);border-top:3px solid var(--teal);
+    padding:2rem 1.8rem;
+  }
+  .formule .amt-line{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.1rem;}
+  .formule h3{font-size:1.5rem;}
+  .formule .amt{font-family:'Fraunces',serif;font-weight:700;font-size:1.8rem;color:var(--teal);}
+  .formule .course-label{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--stone);margin:0.9rem 0 0.4rem;
+  }
+  .formule .course-label:first-of-type{margin-top:0;}
+  .formule ul{list-style:none;}
+  .formule li{font-size:0.87rem;padding:0.25rem 0;color:#4a4438;}
+
+  /* ---------- accompagnement note ---------- */
+  .accomp-note{
+    background:var(--white);border:1px solid var(--line);padding:1.6rem 1.8rem;margin-top:1rem;
+  }
+  .accomp-note .subhead{margin:0 0 0.8rem;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--cream-deep);color:#4a4438;padding:3.6rem 1.5rem 2.2rem;border-top:3px solid var(--teal);}
+  .foot-inner{
+    max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;
+    gap:2.4rem;padding-bottom:2.2rem;border-bottom:1px solid var(--line);
+  }
+  footer h3{color:var(--ink);font-size:1.9rem;margin-bottom:0.8rem;}
+  footer p{font-size:0.9rem;max-width:24rem;}
+  .foot-links a{display:block;text-decoration:none;font-size:0.9rem;padding:0.3rem 0;color:#4a4438;}
+  .foot-links a:hover{color:var(--teal);}
+  .bottom-line{
+    max-width:1180px;margin:1.4rem auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;
+    font-family:'Inter',sans-serif;font-size:0.68rem;color:#8a8272;
+  }
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:760px){
+    .info-strip{grid-template-columns:1fr 1fr;}
+    .info-strip .cell:nth-child(2){border-right:none;}
+    .info-strip .cell{border-bottom:1px solid var(--line);}
+    section{padding:3.4rem 1.2rem;}
+    .foot-inner{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transition:none;opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body style="background-color:#f3f1e9 !important; color:#1e2a2c !important;">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Le Vieil <span>Annecy</span></div>
+    <nav class="links">
+      <a href="#salades">Salades</a>
+      <a href="#savoyardes">Savoyardes</a>
+      <a href="#raclettes">Raclettes</a>
+      <a href="#menus">Menus</a>
+      <a href="#desserts">Desserts</a>
+    </nav>
+    <a class="call-btn" href="tel:0450453241">04 50 45 32 41</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Annecy · Cuisine française & savoyarde</span>
+    <h1>Le Vieil <i>Annecy</i></h1>
+    <p class="sub">Restaurant décontracté au cœur de la vieille ville, spécialisé dans les plats régionaux, les fondues, les tartiflettes et les raclettes à volonté.</p>
+    <div class="meta">
+      <span>4,2 · 2 500 avis</span>
+      <span class="dot">13 Rue Perrière</span>
+      <span class="dot">Ouvert tous les jours</span>
+    </div>
+  </div>
+</section>
+
+<div class="info-strip reveal">
+  <div class="cell">
+    <span class="eyebrow">Adresse</span>
+    <div class="val">13 Rue Perrière<br><small>74000 Annecy</small></div>
+  </div>
+  <div class="cell">
+    <span class="eyebrow">Horaires</span>
+    <div class="val">Tous les jours<br><small>11h30 – 22h00</small></div>
+  </div>
+  <div class="cell">
+    <span class="eyebrow">Téléphone</span>
+    <div class="val">04 50 45 32 41<br><small>Réservation conseillée</small></div>
+  </div>
+  <div class="cell">
+    <span class="eyebrow">Avis</span>
+    <div class="val">4,2 / 5<br><small>2 500 avis Google</small></div>
+  </div>
+</div>
+
+<section id="entrees">
+  <div class="section-head reveal">
+    <h2>Entrées</h2>
+    <span class="eyebrow">Préparées sur place, produits frais</span>
+  </div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Assiette de Charcuterie Apéritif</div><span class="price">8 €</span></div>
+    <div class="dish-row"><div class="name">Planche d'Épicerie Apéritif</div><span class="price">11 €</span></div>
+    <div class="dish-row"><div class="name">Les 6 Escargots de Bourgogne</div><span class="price">12 €</span></div>
+    <div class="dish-row"><div class="name">Les 12 Escargots de Bourgogne</div><span class="price">19 €</span></div>
+    <div class="dish-row"><div class="name">Pâté Croûte Artisanal</div><span class="price">13,50 €</span></div>
+  </div>
+</section>
+
+<section id="salades">
+  <div class="section-head reveal">
+    <h2>Salades Repas</h2>
+    <span class="eyebrow">Généreuses & fraîches</span>
+  </div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Salade Fayolane<span class="desc">Salade mêlée, carottes, andouille, croûtons, Boursin de brebis</span></div><span class="price">16,00 €</span></div>
+    <div class="dish-row"><div class="name">Salade au Chèvre Chaud<span class="desc">Salade mêlée, tomates, toasts de chèvre chaud, poivre, fines tranches de viande de bœuf séchée</span></div><span class="price">18,00 €</span></div>
+    <div class="dish-row"><div class="name">Salade César<span class="desc">Salade mêlée, filet de poulet, croûtons, copeaux de parmesan, œuf dur</span></div><span class="price">18,00 €</span></div>
+    <div class="dish-row"><div class="name">Tomates Anciennes<span class="desc">Selon saison, burrata, pesto basilic maison</span></div><span class="price">18,00 €</span></div>
+    <div class="dish-row"><div class="name">Fines Tranches de Saumon Fumé<span class="desc">Salade mêlée & suprêmes d'agrumes, toasts, beurre</span></div><span class="price">19,50 €</span></div>
+    <div class="dish-row"><div class="name">Salade Fraîcheur<span class="desc">Salade mêlée, pamplemousse, maïs, saumon, crevettes, tomates cerise</span></div><span class="price">19,50 €</span></div>
+  </div>
+</section>
+
+<section id="savoyardes">
+  <div class="section-head reveal">
+    <h2>Spécialités Savoyardes</h2>
+    <span class="eyebrow">Fondues, tartiflettes & plateaux</span>
+  </div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">La Matouille des Bauges<span class="desc">Tomme des Bauges (250g), pommes de terre, lard, charcuterie, oignons</span></div><span class="price">20,00 €</span></div>
+    <div class="dish-row"><div class="name">Plateau Savoyard<span class="desc">Demi-sélection de fromages, pommes de terre, charcuterie</span></div><span class="price">26,00 €</span></div>
+  </div>
+
+  <div class="subhead">Les Fondues (par personne)</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Fondue Savoyarde</div><span class="price">22,50 €</span></div>
+    <div class="dish-row"><div class="name">Fondue aux Cèpes</div><span class="price">24,50 €</span></div>
+    <div class="dish-row"><div class="name">Fondue Forestière</div><span class="price">25,00 €</span></div>
+  </div>
+
+  <div class="subhead">Les Tartiflettes</div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Tartiflette d'Alpage</div><span class="price">19,00 €</span></div>
+    <div class="dish-row"><div class="name">Tartiflette au Reblochon</div><span class="price">21,00 €</span></div>
+  </div>
+
+  <div class="accomp-note reveal">
+    <div class="subhead">En accompagnement de votre fondue ou tartiflette</div>
+    <div class="dish-row"><div class="name">Bol de Salade</div><span class="price">3,00 €</span></div>
+    <div class="dish-row"><div class="name">Pommes de Terre</div><span class="price">3,00 €</span></div>
+    <div class="dish-row"><div class="name">Assiette de Charcuterie</div><span class="price">7,00 €</span></div>
+    <div class="dish-row"><div class="name">Fines Tranches de Bœuf Séché</div><span class="price">8,00 €</span></div>
+  </div>
+</section>
+
+<section id="raclettes">
+  <div class="section-head reveal">
+    <h2>Les Raclettes à Volonté</h2>
+    <span class="eyebrow">Raclette au lait cru</span>
+  </div>
+  <div class="reveal">
+    <div class="dish-row"><div class="name">Raclette au Lait Cru et Fromage<span class="desc">Servie sur meule charbonnée avec plate de raclette</span></div><span class="price">29,00 €/pers</span></div>
+    <div class="dish-row"><div class="name">La Complète (2 pers. min.)<span class="desc">Assortiment de charcuterie et pommes de terre vapeur</span></div><span class="price">29,00 €/pers</span></div>
+    <div class="dish-row"><div class="name">La Spéciale Sans Porc (2 pers. min.)<span class="desc">Assiette de viande de bœuf séchée et pommes de terre vapeur</span></div><span class="price">29,50 €/pers</span></div>
+    <div class="dish-row"><div class="name">Assiette de Charcuterie Supplémentaire</div><span class="price">9,50 €</span></div>
+  </div>
+</section>
+
+<section id="menus">
+  <div class="section-head reveal">
+    <h2>Nos Menus</h2>
+    <span class="eyebrow">Entrée, plat & dessert au choix</span>
+  </div>
+  <div class="formule-grid reveal">
+    <div class="formule">
+      <div class="amt-line"><h3>Menu Roc de Chère</h3><span class="amt">26,00 €</span></div>
+      <p style="font-size:0.8rem;color:#8a8272;margin-bottom:0.6rem;">Sauf week-end et jours fériés</p>
+      <div class="course-label">Entrée au choix</div>
+      <ul><li>Salade Savoyanne</li><li>Salade Italienne</li><li>Assiette de rosette</li></ul>
+      <div class="course-label">Plat au choix</div>
+      <ul><li>Petite friture d'éperlans</li><li>Linguines à la crème de Beaufort</li><li>Brochette de volaille aux épices douces, frites</li></ul>
+      <div class="course-label">Dessert au choix</div>
+      <ul><li>Fromage blanc fermier à la crème</li><li>Duo de choux maison</li><li>Glace 2 boules</li></ul>
+    </div>
+    <div class="formule">
+      <div class="amt-line"><h3>Menu Semnoz</h3><span class="amt">34,00 €</span></div>
+      <p style="font-size:0.8rem;color:#8a8272;margin-bottom:0.6rem;">&nbsp;</p>
+      <div class="course-label">Entrée au choix</div>
+      <ul><li>6 Escargots de Bourgogne</li><li>Salade César</li><li>Pâté croûte artisanal</li></ul>
+      <div class="course-label">Plat au choix</div>
+      <ul><li>Escalope de volaille sauce cèpes</li><li>Truite fraîche meunière</li><li>Faux filet de bœuf à la plancha</li></ul>
+      <div class="course-label">Dessert au choix</div>
+      <ul><li>Fromage blanc fermier</li><li>Tarte aux myrtilles</li><li>Crème brûlée</li><li>Glace 2 boules</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="desserts">
+  <div class="section-head reveal">
+    <h2>Desserts Faits Maison</h2>
+    <span class="eyebrow">Glaces des Alpes & coupes</span>
+  </div>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>Fromage Blanc Fermier à la Crème</h3><span class="price">5,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Fromage Blanc Fermier aux Myrtilles</h3><span class="price">6,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Tarte aux Myrtilles</h3><span class="price">6,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Tarte Tatin</h3><span class="price">8,50 €</span></div><p>Glace vanille.</p></div>
+    <div class="card"><div class="top"><h3>Fondant au Chocolat</h3><span class="price">9,00 €</span></div><p>Glace poire.</p></div>
+    <div class="card"><div class="top"><h3>Profiteroles</h3><span class="price">9,00 €</span></div></div>
+    <div class="card"><div class="top"><h3>3 Boules Gourmandes</h3><span class="price">10,50 €</span></div><p>Vanille, chocolat chaud, amandes grillées, crème chantilly.</p></div>
+    <div class="card"><div class="top"><h3>Crème Brûlée</h3><span class="price">8,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Café Gourmand du Chef</h3><span class="price">10,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>Assiette de Fromages</h3><span class="price">11,00 €</span></div></div>
+  </div>
+
+  <div class="subhead">Glaces & Sorbets — Glace des Alpes</div>
+  <p style="font-size:0.87rem;color:#5c5648;margin-bottom:1rem;">Composez votre coupe : vanille bourbon de Madagascar, chocolat, caramel, café, fraise, menthe-chocolat, pistache, noix de coco, poire, noisette, ou sorbet citron / framboise.</p>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>2 Boules</h3><span class="price">6,50 €</span></div></div>
+    <div class="card"><div class="top"><h3>3 Boules</h3><span class="price">9,00 €</span></div></div>
+    <div class="card"><div class="top"><h3>Supplément Chantilly, Sauce Chocolat ou Coulis</h3><span class="price">1,50 €</span></div></div>
+  </div>
+
+  <div class="subhead">Coupes Glacées</div>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>Café Liégeois</h3><span class="price">10,00 €</span></div><p>Glace café, vanille, café froid, crème fouettée, amandes grillées.</p></div>
+    <div class="card"><div class="top"><h3>Chocolat Liégeois</h3><span class="price">10,00 €</span></div><p>Glace café, vanille, chocolat chaud, crème fouettée, amandes grillées.</p></div>
+    <div class="card"><div class="top"><h3>Coupe Melba</h3><span class="price">10,00 €</span></div><p>Glace fraise, fruits de saison, coulis de fruits rouges, crème fouettée.</p></div>
+    <div class="card"><div class="top"><h3>Nutella Nuts</h3><span class="price">10,00 €</span></div><p>Glace vanille et noisette, chocolat, crème fouettée.</p></div>
+    <div class="card"><div class="top"><h3>Parfum d'Automne</h3><span class="price">10,00 €</span></div><p>Glace vanille, crème de marron, crème fouettée.</p></div>
+  </div>
+
+  <div class="subhead">Coupes Glacées avec Alcool</div>
+  <div class="card-grid reveal">
+    <div class="card"><div class="top"><h3>Iceberg</h3><span class="price">11,00 €</span></div><p>Glace menthe-chocolat, Get 27.</p></div>
+    <div class="card"><div class="top"><h3>Colonel</h3><span class="price">11,00 €</span></div><p>Sorbet citron, vodka.</p></div>
+    <div class="card"><div class="top"><h3>Williamine</h3><span class="price">11,00 €</span></div><p>Glace poire, alcool de poire.</p></div>
+    <div class="card"><div class="top"><h3>Carabinée</h3><span class="price">11,00 €</span></div><p>Sorbet citron, limoncello.</p></div>
+  </div>
+</section>
+
+<section id="infos">
+  <div class="section-head reveal">
+    <h2>Nous Trouver</h2>
+    <span class="eyebrow">Rue Perrière, vieille ville d'Annecy</span>
+  </div>
+  <div class="card-grid reveal">
+    <div class="card">
+      <h3>Adresse</h3>
+      <p>13 Rue Perrière, 74000 Annecy</p>
+    </div>
+    <div class="card">
+      <h3>Contact</h3>
+      <p><a href="tel:0450453241">04 50 45 32 41</a></p>
+    </div>
+    <div class="card">
+      <h3>Ce qu'on en dit</h3>
+      <p>4,2/5 sur 2 500 avis Google.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <h3>Le Vieil Annecy</h3>
+      <p>Restaurant de spécialités savoyardes au cœur de la vieille ville, 13 Rue Perrière, Annecy.</p>
+    </div>
+    <div class="foot-links">
+      <span class="eyebrow">Explorer</span>
+      <a href="#salades">Salades Repas</a>
+      <a href="#savoyardes">Savoyardes</a>
+      <a href="#raclettes">Raclettes</a>
+      <a href="#menus">Nos Menus</a>
+    </div>
+    <div class="foot-links">
+      <span class="eyebrow">Contact</span>
+      <a href="tel:0450453241">04 50 45 32 41</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=13+Rue+Perri%C3%A8re+74000+Annecy" target="_blank" rel="noopener">Itinéraire</a>
+      <span style="font-size:0.9rem;padding:0.3rem 0;display:block;">13 Rue Perrière, 74000</span>
+    </div>
+  </div>
+  <div class="bottom-line">
+    <span>Le Vieil Annecy — Vieille ville d'Annecy</span>
+    <span>Ouvert tous les jours, 11h30–22h00</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
